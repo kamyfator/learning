@@ -1,19 +1,24 @@
-var doge;
+var someAnimal;
 
-class zwierzątko
-{
-    constructor(imię, dźwięk)
-    {
-        this.imię = imię;
-        this.dźwięk = dźwięk;
-    }
-    dajGłos()
-    {
-        document.getElementById("tutaj").innerHTML = this.dźwięk;
+class animal{
+    constructor(name, sound){
+        this.name = name;
+        this.sound = sound;
     }
 }
 
-function funkcja()
-{
-    doge = new zwierzątko("doge", "wow");
+function createAnimal(name, sound){
+    someAnimal = new animal();
+    someAnimal.name = name;
+    someAnimal.sound = sound;
+}
+
+function makeSmaller(animal){
+    animal.name = "little " + animal.name;
+    animal.sound = "cute " + animal.sound;
+    return animal;
+}
+
+function show(){
+    document.getElementById('paragraph').innerHTML = "My name is " + someAnimal.name + " and i do " + someAnimal.sound;
 }
