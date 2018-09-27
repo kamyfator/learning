@@ -1,34 +1,22 @@
-var dane = [1,2,1,3,2,5,1];
+var dane = [3, 6, 20, 99, 10, 15];
 
-function pokazDane(){
+function pokazDane() {
     document.getElementById("dane").innerHTML = dane;
 }
 
-function wykonaj(){
-    document.getElementById("rezultat").innerHTML = funkcja(dane);
+function wykonaj() {
+    document.getElementById("rezultat").innerHTML = mediana(dane);
 }
 
-function funkcja(dane){
-    var tablica = [];
-    for (let item of dane){
-        if (!isUnique(dane, item)){
-            tablica.push(item);
-        }
+function sortNumber(a, b) {
+    return a - b;
+}
+
+function mediana(tablica) {
+    tablica.sort(sortNumber);
+    console.log(tablica);
+    if (tablica.length % 2 == 0) {
+        return ((tablica[tablica.length / 2] + tablica[(tablica.length / 2) - 1]) / 2);
     }
-    return tablica;
+    return tablica[Math.floor(tablica.length / 2)];
 }
-
-function isUnique(arr, el) {
-    var hasOne = false;
-    for (let item of arr) {
-        if (item === el) {
-            if (hasOne) {
-                return false;
-            } else {
-                hasOne = true;
-            }
-        }
-    }
-    return true;
-}
-
