@@ -1,22 +1,32 @@
-var dane = [3, 6, 20, 99, 10, 15];
+var dane = 'azazazaz';
 
 function pokazDane() {
     document.getElementById("dane").innerHTML = dane;
 }
 
 function wykonaj() {
-    document.getElementById("rezultat").innerHTML = mediana(dane);
+    document.getElementById("rezultat").innerHTML = licznik(dane);
 }
 
-function sortNumber(a, b) {
-    return a - b;
-}
-
-function mediana(tablica) {
-    tablica.sort(sortNumber);
-    console.log(tablica);
-    if (tablica.length % 2 == 0) {
-        return ((tablica[tablica.length / 2] + tablica[(tablica.length / 2) - 1]) / 2);
+function licznik(data) {
+    var max = 1;
+    var i = 0;
+    var lastLetter = data[0];
+    var count = 1;
+    if (data == '') {
+        return 0;
     }
-    return tablica[Math.floor(tablica.length / 2)];
+    for (i = 1; i < data.length; i++) {
+        if (data[i] == lastLetter) {
+            count++;
+            if (count > max) {
+                max = count;
+            }
+        }
+        else {
+            count = 1;
+        }
+        lastLetter = data[i];
+    }
+    return max;
 }
