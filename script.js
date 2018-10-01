@@ -1,14 +1,17 @@
-var name;
-var age;
+var dane = 'bae kocham';
+
 
 function pokazDane() {
     document.getElementById("dane").innerHTML = dane;
 }
 
 function wykonaj() {
-    document.getElementById("rezultat").innerHTML = licznik(dane);
+    document.getElementById("rezultat").innerHTML = correctSentence(dane);
 }
 
-function sayHi(name, age) {
-    return "Hi. My name is " + name + " and I'm " + age + " years old.";
+function correctSentence(sentence) {
+    if (sentence[sentence.length+1]!=='.') {
+        sentence = sentence + '.';
+    }
+    return sentence[0].toUpperCase() + sentence.slice(1);
 }
