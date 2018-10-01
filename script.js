@@ -18,7 +18,7 @@ function timeConverter(dane) {
             postFormat = '0' + dane;
         } else {
             postFormat = dane;
-        }
+        } 
     }
     else {
         if (dane[1] == '2') {
