@@ -1,4 +1,4 @@
-var dane = '6:56 p.m.';
+var dane = '00:00';
 
 
 function pokazDane() {
@@ -11,26 +11,26 @@ function wykonaj() {
 
 function timeConverter(dane) {
     var postFormat;
-    if (dane[dane.length - 4] == 'a') {
-        if (dane[1] == '2') {
-            postFormat = '00' + dane.slice(2);
-        } else if (dane[1] == ':') {
-            postFormat = '0' + dane;
-        } else {
+    if (dane[0] * 10 + dane[1] * 1 < 12) {
+        if(dane[0] * 1 + dane[1] * 1 == 0) {
+            postFormat = '12:00';
+        }
+        else if (dane[0] == '0') {
+            postFormat = dane.slice(1,5);
+        }
+        else {
             postFormat = dane;
-        } 
+        }
+        return postFormat + ' a.m.'
     }
     else {
-        if (dane[1] == '2') {
+        if (dane[0] * 10 + dane[1] * 1 == 12) {
             postFormat = dane;
         }
-        else if (dane[1] == ':') {
-            var hour = dane[0] * 1 + 12;
-            postFormat = hour + dane.slice(1);
-        } else {
-            var hour = dane[0] * 10 + dane[1] * 1 + 12;
-            postFormat = hour + dane.slice(2);
-        }
+        else {
+            var hour = dane[0] * 10 + dane[1] * 1 - 12;
+            postFormat = hour + ':' + dane.slice(3);
+        } 
     }
-    return postFormat.slice(0,5);
+    return postFormat + ' p.m.';
 }
