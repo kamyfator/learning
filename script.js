@@ -1,24 +1,23 @@
-var dane = [1,5,2,7];
+var dane = 1072609;
 
 function pokazDane() {
     document.getElementById("dane").innerHTML = dane;
 }
 
 function wykonaj() {
-    document.getElementById("rezultat").innerHTML = multiply(dane);
+    document.getElementById("rezultat").innerHTML = multi(dane);
 }
 // Think twice, code once
-
-function multiply(dane) {
-    var suma=0;
-    var i=0;
-    if (dane.length == 0) return 0;
-    for ( ; i < dane.length; i++) {
-        //index = dane.indexOf(i);
-        console.log(dane[i]);
-        if (i % 2 == 0) {
-            suma=suma+dane[i];
+function multi(liczba) {
+    var wynik = 1;
+    var liczba = dane.toString();
+    for (var i = 0; i < liczba.length; i++) {
+        if (liczba[i] == 0) {
+        }
+        else {
+            wynik = wynik * liczba[i];
+            console.log(wynik);
         }
     }
-    return suma * dane[dane.length-1];
+    return wynik;
 }
