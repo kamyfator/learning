@@ -1,23 +1,15 @@
-var dane = 6;
+var dane = 19;
 function pokazDane() {
     document.getElementById("dane").innerHTML = dane;
 }
 
 function wykonaj() {
-    document.getElementById("rezultat").innerHTML = rekurencja(dane);
+    document.getElementById("rezultat").innerHTML = fibonacci(dane);
 }
 // Think twice, code once
-function power(wykladnik) {
-    var wynik = 1, i;
-    if (wykladnik == 0) return 1;
-    if (wykladnik == 1) return 2;
-    for (i = 1; i <= wykladnik; i++) {
-        wynik = wynik * 2;
-    }
-    return wynik;
+function fibonacci(a) {
+    if (a == 1) return 1;
+    if (a == 2) return 1;
+    return fibonacci(a - 1) + fibonacci(a - 2);
 }
 
-function rekurencja(wykladnik) {
-    if (wykladnik == 0) return 1;
-    return rekurencja(wykladnik-1)*2;
-}
