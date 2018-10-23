@@ -1,0 +1,44 @@
+body {
+    background-color: aquamarine;
+}
+
+.wykonaj {
+    color: blueviolet;
+}
+
+#dane{
+    background-color: red;
+    width: 70%;
+    margin: auto auto;
+}
+
+.rectangle {
+    width: 400px;
+    height: 150px;
+    background-color: red;
+    margin:auto auto;
+    margin-top: 15%;
+    color: yellow;
+    text-align: center;
+    font-size: 32px;
+    padding-top: 5%;
+}
+
+.pokazywanko:hover #rectangle{
+    display: inline-block;
+}
+
+.pokazywanko #rectangle { 
+    display: none;
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    background-color: red;
+    margin:auto auto;
+    margin-top: 15%;
+    color: yellow;
+    text-align: center;
+    font-size: 32px;
+    padding-top: 5%;
+
+}

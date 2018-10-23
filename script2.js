@@ -1,4 +1,4 @@
-var dane = 3;
+var dane = 5;
 var drzewo = [];
 function pokazDane() {
     document.getElementById("dane").innerHTML = dane;
@@ -42,6 +42,21 @@ function budujDrzewo() {
     drzewo.push(lisc);
     lisc = {};
     lisc.numer = 7;
+    lisc.lewySyn = 8;
+    lisc.prawySyn = 9;
+    drzewo.push(lisc);
+    lisc = {};
+    lisc.numer = 8;
+    lisc.lewySyn = null;
+    lisc.prawySyn = null;
+    drzewo.push(lisc);
+    lisc = {};
+    lisc.numer = 9;
+    lisc.lewySyn = 10;
+    lisc.prawySyn = null;
+    drzewo.push(lisc);
+    lisc = {};
+    lisc.numer = 10;
     lisc.lewySyn = null;
     lisc.prawySyn = null;
     drzewo.push(lisc);
